@@ -14,7 +14,7 @@
 .card-products img{
     margin-top: 40px;
     width: 250px;
-    height: 250px;
+    height: 200px;
 }
 
 .card-products button {
@@ -31,4 +31,22 @@
 
 .card-products button:hover {
     opacity: 0.7;
+}
+
+/*card button*/
+.cart-btn{
+    position: fixed;
+    top: 90vh;
+    right: 40px;
+    background-color: rgb(25, 25, 25);
+    padding: 10px;
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.cart-btn:hover{
+    cursor: pointer;
+    opacity: 0.9;
 }

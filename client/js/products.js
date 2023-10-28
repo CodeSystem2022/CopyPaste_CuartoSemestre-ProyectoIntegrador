@@ -1,0 +1,58 @@
+const productos = [
+    {
+        id: 1,
+        productName: "Banana",
+        price: 480,
+        quantity: 1,
+        img: "../client/media/Banana.png",
+    },
+    {
+        id: 2,
+        productName: "Kiwi",
+        price: 480,
+        quantity: 1,
+        img: "../client/media/Kiwi.png",
+    }, 
+    {
+        id: 3,
+        productName: "Lechuga",
+        price: 480,
+        quantity: 1,
+        img: "../client/media/Lechuga.png",
+    }, 
+    {
+        id: 4,
+        productName: "Limon",
+        price: 480,
+        quantity: 1,
+        img: "../client/media/Limon.png",
+    }, 
+    {
+        id: 5,
+        productName: "Morron",
+        price: 480,
+        quantity: 1,
+        img: "/client/media/Morron.png",
+    }, 
+    {
+        id: 6,
+        productName: "Papa",
+        price: 480,
+        quantity: 1,
+        img: "../client/media/Papa.png",
+    }, 
+    {
+        id: 7,
+        productName: "Pepino",
+        price: 480,
+        quantity: 1,
+        img: "../client/media/Pepino.png",
+    },, 
+    {
+        id: 8,
+        productName: "Tomate",
+        price: 480,
+        quantity: 1,
+        img: "../client/media/Tomate.png",
+    },
+]
