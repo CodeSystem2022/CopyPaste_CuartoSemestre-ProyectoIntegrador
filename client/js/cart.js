@@ -49,7 +49,7 @@ const displayCart = () => {
     `;
 
         modalContainer.append(modalBody);
-
     })
-
 };
+
+cartBtn.addEventListener("click", displayCart);
