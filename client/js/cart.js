@@ -68,10 +68,9 @@ const displayCart = () => {
         });
 
         //delete
-        const deleteProduct = modalBody.querySelector("delete-product")
-
-        deleteProduct.addEventListener("clock", () => {
-            deleteCartProduct(product.id);
+        const deleteProduct = modalBody.querySelector(".delete-product");
+        deleteProduct.addEventListener("click", ()=> {
+                deleteCartProduct(product.id)
         });
     });
 
