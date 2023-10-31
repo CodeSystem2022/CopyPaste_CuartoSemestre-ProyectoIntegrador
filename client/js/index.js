@@ -1,4 +1,5 @@
 const shopContent = document.getElementById("shopContent");
+const cart = [];
 
 productos.forEach((product) =>{
     const content = document.createElement("div");
@@ -32,6 +33,6 @@ productos.forEach((product) =>{
                 img: product.img,
             });
         }
-        console.log(cart)
+        //console.log(cart)
     });
 });
