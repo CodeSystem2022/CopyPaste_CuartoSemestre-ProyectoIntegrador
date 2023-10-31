@@ -64,6 +64,13 @@ const displayCart = () => {
             product.quanty++;
             displayCart();
         })
+
+        //delete
+        const deleteProduct = modalBody.querySelector("delete-product")
+
+        deleteProduct.addEventListener("clock", () => {
+            deleteCartProduct(product.id);
+        })
     });
     //modal footer
     const total = cart.reduce((acc,el) => acc + el.price * el.quanty, 0);
@@ -78,3 +85,9 @@ const displayCart = () => {
 };
 
 cartBtn.addEventListener("click", displayCart);
+
+const deleteCartProduct = (id) => { 
+    const foundId = cart.findIndex((element)=> element.id === id);
+    cart.splice(foundId, 1);
+    displayCart()
+};
