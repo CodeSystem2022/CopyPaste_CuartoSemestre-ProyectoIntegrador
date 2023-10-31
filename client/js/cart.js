@@ -55,6 +55,7 @@ const displayCart = () => {
             if(product.quanty !== 1){
                 product.quanty--;
                 displayCart();
+                displayCartCounter();
 
             }
         });
@@ -63,6 +64,7 @@ const displayCart = () => {
         increse.addEventListener("click", () => {
             product.quanty++;
             displayCart();
+            displayCartCounter();
         })
 
         //delete
@@ -79,7 +81,7 @@ const displayCart = () => {
     const modalFooter = document.createElement("div");
     modalFooter.className = "modal-footer";
     modalFooter.innerHTML = `
-    <div class = "total-price">${total}</div>`;
+    <div class = "total-price">Total: ${total}</div>`;
 
     modalContainer.append(modalFooter);
 };
@@ -90,4 +92,16 @@ const deleteCartProduct = (id) => {
     const foundId = cart.findIndex((element)=> element.id === id);
     cart.splice(foundId, 1);
     displayCart()
+    displayCartCounter();
+};
+
+const displayCartCounter = ()=> {
+    const cartLenght = cart.reduce((acc, el) => acc + el.quanty, 0);
+    if (cartLenght > 0) {
+        cartCounter.style.display = "block";
+        cartCounter.innerText = cartLenght;
+    }else{
+        cartCounter.style.display = "none";
+    }
+
 };
