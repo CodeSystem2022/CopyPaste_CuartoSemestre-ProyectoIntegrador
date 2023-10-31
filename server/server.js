@@ -2,6 +2,7 @@ const express = require("express"); //express: framework para node js
 const app = express(); //esta constante inicializa express
 const cors = require("cors"); //medida de seguridad para navegadores
 const mercadopago = require("mercadopago");
+const path = require("path"); //Direccion a los directorios necesarios para arrancar el servidor
 
 // REPLACE WITH YOUR ACCESS TOKEN AVAILABLE IN: https://developers.mercadopago.com/panel
 mercadopago.configure({
@@ -11,12 +12,12 @@ mercadopago.configure({
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json()); //para que pueda leer archivos .json
-app.use(express.static("../../client/html-js")); //no redirige a este archivo estático
+app.use(express.static(path.join(__dirname, "../../client"))); //no redirige a este archivo estático
 app.use(cors());
 
 //inicializa una primer ruta vacía "/"
-app.get("/", function (req, res) {
-    res.status(200).sendFile("index.html"); //va a mostrar lo del index.html
+app.get("/", function () {
+    path.resolve(__dirname,"..", "client", "index.html");
 });
 
 //al mandar desde el front-end los datos de una compra, se crea una preferencia
