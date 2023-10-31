@@ -128,8 +128,7 @@
     margin-right: 4em;
 }
 
-.quantity-btn-decrese,
-.quantity-btn-increse{
+.quantity-btn-decrese, .quantity-btn-increse{
     color: #333333;
     cursor: pointer;
     font-size: 16px;
