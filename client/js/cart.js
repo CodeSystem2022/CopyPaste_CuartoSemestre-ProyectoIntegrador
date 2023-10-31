@@ -1,8 +1,7 @@
 const modalContainer = document.getElementById("modal-container");
 const modalOverlay = document.getElementById("modal-overlay");
-
 const cartBtn = document.getElementById("cart-btn");
-
+const cartCounter = document.getElementById("cart-counter");
 
 const displayCart = () => {
     modalContainer.innerHTML = "";
@@ -29,10 +28,11 @@ const displayCart = () => {
     modalContainer.append(modalHeader);
 
     //modal Body
-    cart.forEach((product) => {
-        const modalBody = document.createElement("div");
-        modalBody.className = "modal-body";
-        modalBody.innerHTML = `
+    if (cart.length > 0) {
+        cart.forEach((product) => {
+            const modalBody = document.createElement("div");
+            modalBody.className = "modal-body";
+            modalBody.innerHTML = `
         <div class = "product">
             <img class = "product-img" src="${product.img}" />
             <div class = "product-info">
@@ -50,9 +50,9 @@ const displayCart = () => {
 
         modalContainer.append(modalBody);
     
-    const decrese = modalBody.querySelector(".quantity-btn-decrese");
+        const decrese = modalBody.querySelector(".quantity-btn-decrese");
         decrese.addEventListener("click", () => {
-            if(product.quanty !== 1){
+            if (product.quanty !== 1) {
                 product.quanty--;
                 displayCart();
                 displayCartCounter();
@@ -65,18 +65,18 @@ const displayCart = () => {
             product.quanty++;
             displayCart();
             displayCartCounter();
-        })
+        });
 
         //delete
         const deleteProduct = modalBody.querySelector("delete-product")
 
         deleteProduct.addEventListener("clock", () => {
             deleteCartProduct(product.id);
-        })
+        });
     });
-    //modal footer
-    const total = cart.reduce((acc,el) => acc + el.price * el.quanty, 0);
 
+    //modal footer
+    const total = cart.reduce((acc, el) => acc + el.price * el.quanty, 0);
 
     const modalFooter = document.createElement("div");
     modalFooter.className = "modal-footer";
@@ -84,6 +84,12 @@ const displayCart = () => {
     <div class = "total-price">Total: ${total}</div>`;
 
     modalContainer.append(modalFooter);
+    } else {
+        const modalText = document.createElement("h2");
+        modalText.className = "modal-body";
+        modalText.innerText = "your cart is empty";
+        modalContainer.append(modalText);
+    }
 };
 
 cartBtn.addEventListener("click", displayCart);
@@ -95,12 +101,12 @@ const deleteCartProduct = (id) => {
     displayCartCounter();
 };
 
-const displayCartCounter = ()=> {
+const displayCartCounter = () => {
     const cartLenght = cart.reduce((acc, el) => acc + el.quanty, 0);
     if (cartLenght > 0) {
         cartCounter.style.display = "block";
         cartCounter.innerText = cartLenght;
-    }else{
+    } else {
         cartCounter.style.display = "none";
     }
 
