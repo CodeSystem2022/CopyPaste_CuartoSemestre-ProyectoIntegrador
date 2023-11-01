@@ -12,12 +12,13 @@ mercadopago.configure({
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json()); //para que pueda leer archivos .json
-app.use(express.static(path.join(__dirname, "../../client"))); //no redirige a este archivo estático
+app.use(express.static(path.join(__dirname, "../client"))); //no redirige a este archivo estático
+
 app.use(cors());
 
 //inicializa una primer ruta vacía "/"
 app.get("/", function () {
-    path.resolve(__dirname,"..", "client", "index.html");
+   res.sendFile(path.resolve(__dirname, "..", "client", "index.html"));
 });
 
 //al mandar desde el front-end los datos de una compra, se crea una preferencia
@@ -58,6 +59,6 @@ app.get('/feedback', function (req, res) { //para dar mas feedback en caso de co
     });
 });
 
-app.listen(8080, () => { //ESCUCHA EL SERVIDOR EN EL PUERTO 8080
+app.listen(8080, () => {
     console.log("The server is now running on Port 8080");
 });
