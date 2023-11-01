@@ -69,7 +69,8 @@ const displayCart = () => {
 
         //delete
         const deleteProduct = modalBody.querySelector(".delete-product");
-        deleteProduct.addEventListener("click", ()=> {
+        deleteProduct.addEventListener("click", () => {
+
                 deleteCartProduct(product.id)
         });
     });
@@ -80,9 +81,20 @@ const displayCart = () => {
     const modalFooter = document.createElement("div");
     modalFooter.className = "modal-footer";
     modalFooter.innerHTML = `
-    <div class = "total-price">Total: ${total}</div>`;
+
+         <div class = "total-price">Total: ${total}</div>
+            <button class"btn-primary" id="checkout-btn"> go to checkout</button>
+            <div id="button-checkout"></div>
+        `;
 
     modalContainer.append(modalFooter);
+    //mp;
+        const mercadopago = new MercadoPago("public_key", {
+            locale: "es-AR",
+        });
+
+        const checkoutButton = modalFooter.querySelector("checkout-btn");
+
     } else {
         const modalText = document.createElement("h2");
         modalText.className = "modal-body";
@@ -94,7 +106,8 @@ const displayCart = () => {
 cartBtn.addEventListener("click", displayCart);
 
 const deleteCartProduct = (id) => { 
-    const foundId = cart.findIndex((element)=> element.id === id);
+    const foundId = cart.findIndex((element) => element.id === id);
+
     cart.splice(foundId, 1);
     displayCart()
     displayCartCounter();
