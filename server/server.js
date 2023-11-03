@@ -29,7 +29,7 @@ app.get("/", function () {
    path.resolve(__dirname, "..", "client", "index.html");
 });
 
-//Solicitud a la base de datos de PostgreSQL
+//Solicitud de todos los productos a la base de datos de PostgreSQL
 app.get("/productos", (req, res) => {
     pool.query('SELECT * FROM productos', (error, result) => {
         if (error) {
@@ -38,6 +38,20 @@ app.get("/productos", (req, res) => {
         } else {
             const productos = result.rows;
             res.json(productos);
+        }
+    });
+});
+
+//Solicitud de un producto segun id a la base de datos de PostgreSQL
+app.get("/productos/:id", (req, res) => {
+    const productId = req.params.id;
+    pool.query('SELECT * FROM productos WHERE id = $1', [productId], (error, result) => {
+        if (error) {
+            console.error('Error al obtener el producto', error);
+            res.status(500).json({ error: 'Error al obtener el producto' });
+        } else {
+            const producto = result.rows[0];
+            res.json(producto);
         }
     });
 });

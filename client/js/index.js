@@ -8,7 +8,7 @@ fetch("/productos")
             content.className = "card";
             content.innerHTML = `
             <img src="${product.img}">
-            <h3>${product.product_name}</h3>
+            <h3>${product.name}</h3>
             <p>${product.price} $</p>
             `;
             shopContent.append(content);
@@ -30,7 +30,7 @@ fetch("/productos")
                 }else{
                     cart.push({
                         id: product.id,
-                        productName: product.productName,
+                        name: product.name,
                         price: product.price,
                         quanty: product.quanty,
                         img: product.img,

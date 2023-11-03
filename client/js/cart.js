@@ -3,10 +3,13 @@ const modalOverlay = document.getElementById("modal-overlay");
 const cartBtn = document.getElementById("cart-btn");
 const cartCounter = document.getElementById("cart-counter");
 
+const cart = []; // Inicializamos el carrito como un array vacío.
+
 const displayCart = () => {
     modalContainer.innerHTML = "";
     modalContainer.style.display = "block";
     modalOverlay.style.display = "block";
+
     //modal Header
     const modalHeader = document.createElement("div");
     const modalClose = document.createElement("div");
@@ -29,48 +32,49 @@ const displayCart = () => {
         cart.forEach((product) => {
             const modalBody = document.createElement("div");
             modalBody.className = "modal-body";
-            modalBody.innerHTML = `
-        <div class = "product">
-            <img class = "product-img" src="${product.img}" />
-            <div class = "product-info">
-                <h4>${product.productName}</h4>
-            </div>
-            <div class = "quantity">
-                <span class = "quantity-btn-decrese">-</span>
-                <span class = "quantity-input">${product.quanty}</span>
-                <span class = "quantity-btn-increse">+</span>
-            </div>
-            <div class = "price">${product.price * product.quanty} $</div>
-            <div class = "delete-product">❌</div>
-        </div>
-        `;
-
-        modalContainer.append(modalBody);
-        const decrese = modalBody.querySelector(".quantity-btn-decrese");
-        decrese.addEventListener("click", () => {
-            if(product.quanty !== 1){
-                product.quanty--;
-                displayCart();
-                displayCartCounter();
-
-            }
+            fetch(`/productos/${product.id}`) // Ruta en el servidor
+                .then((response) => response.json())
+                .then((producto) => {
+                    modalBody.innerHTML = `
+                        <div class="product">
+                            <img class="product-img" src="${producto.img}" />
+                            <div class="product-info">
+                                <h4>${producto.product_name}</h4>
+                            </div>
+                            <div class="quantity">
+                                <span class="quantity-btn-decrese">-</span>
+                                <span class="quantity-input">${producto.quantity}</span>
+                                <span class="quantity-btn-increse">+</span>
+                            </div>
+                            <div class="price">${producto.price * producto.quantity} $</div>
+                            <div class="delete-product">❌</div>
+                        </div>
+                    `;
+                    modalContainer.append(modalBody);
+                    modalContainer.append(modalBody);
+                    const decrese = modalBody.querySelector(".quantity-btn-decrese");
+                    decrese.addEventListener("click", () => {
+                        if(product.quantity !== 1){
+                            producto.quantity--;
+                            displayCart();
+                            displayCartCounter();
+                        }
+                    });
+                    //Add product
+                    const increse = modalBody.querySelector(".quantity-btn-increse");
+                    increse.addEventListener("click", () => {
+                        producto.quantity++;
+                        displayCart();
+                        displayCartCounter();
+                    });
+                    //Delete product
+                    const deleteProduct = modalBody.querySelector(".delete-product");
+                    deleteProduct.addEventListener("click", ()=> {
+                        deleteCartProduct(producto.id)
+                    });
+                });
         });
-
-        const increse = modalBody.querySelector(".quantity-btn-increse");
-        increse.addEventListener("click", () => {
-            product.quanty++;
-            displayCart();
-            displayCartCounter();
-        });
-
-        //delete
-        const deleteProduct = modalBody.querySelector(".delete-product");
-        deleteProduct.addEventListener("click", ()=> {
-
-                deleteCartProduct(product.id)
-        });
-    });
-
+        
     //modal footer
     const total = cart.reduce((acc, el) => acc + el.price * el.quanty, 0);
 
