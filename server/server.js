@@ -7,11 +7,11 @@ const { Pool } = require('pg');
 
 // Configuración de la conexión a la base de datos PostgreSQL
 const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'verduleria', 
-  password: 'postgres',
-  port: 5432,
+    user: 'postgres',
+    host: 'localhost',
+    database: 'verduleria', 
+    password: 'postgres',
+    port: 5432,
 });
 
 // Configuración de mercadoPago
@@ -29,6 +29,18 @@ app.get("/", function () {
    path.resolve(__dirname, "..", "client", "index.html");
 });
 
+//Solicitud a la base de datos de PostgreSQL
+app.get("/productos", (req, res) => {
+    pool.query('SELECT * FROM productos', (error, result) => {
+        if (error) {
+            console.error('Error al obtener productos', error);
+            res.status(500).json({ error: 'Error al obtener productos' });
+        } else {
+            const productos = result.rows;
+            res.json(productos);
+        }
+    });
+});
 
 app.post("/create_preference", (req, res) => {
 
