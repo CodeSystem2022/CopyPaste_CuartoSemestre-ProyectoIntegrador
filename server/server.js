@@ -3,10 +3,20 @@ const app = express();
 const cors = require("cors");
 const mercadopago = require("mercadopago");
 const path = require("path");
+const { Pool } = require('pg');
 
-// REPLACE WITH YOUR ACCESS TOKEN AVAILABLE IN: https://developers.mercadopago.com/panel
+// Configuración de la conexión a la base de datos PostgreSQL
+const pool = new Pool({
+  user: 'postgres',
+  host: 'localhost',
+  database: 'verduleria', 
+  password: 'postgres',
+  port: 5432,
+});
+
+// Configuración de mercadoPago
 mercadopago.configure({
-    access_token: "APP_USR-8005534317430798-091718-b982966f21e5ad67337aec6868ccafbb-1483636744",
+    access_token: "TEST-9004424593507134-091521-ea1d59107b1ffab96f224c7c84a44823-17406307",
 });
 
 app.use(express.urlencoded({ extended: false }));
@@ -17,7 +27,7 @@ app.use(cors());
 //inicializa una primer ruta vacía "/"
 app.get("/", function () {
    path.resolve(__dirname, "..", "client", "index.html");
-   });
+});
 
 
 app.post("/create_preference", (req, res) => {
