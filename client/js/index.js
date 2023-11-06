@@ -32,7 +32,7 @@ fetch("/productos")
                         id: product.id,
                         name: product.name,
                         price: product.price,
-                        quanty: product.quanty,
+                        quantity: 1,
                         img: product.img,
                     });
                     displayCartCounter();
