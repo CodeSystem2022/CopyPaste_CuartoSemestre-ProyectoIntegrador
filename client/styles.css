@@ -6,7 +6,12 @@
 }
 
 /* Home */
-.titulo {
+.logo{
+    width: 8em;
+    height: 11em
+}
+
+.title-text {
     font-family: 'Slims', sans-serif;
     font-size: 10em;
     font-weight: normal;
@@ -14,6 +19,14 @@
     text-align: center;
     text-shadow: 7px 7px 1px #F1C744;
     cursor: default;
+}
+
+.title{
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 body {
