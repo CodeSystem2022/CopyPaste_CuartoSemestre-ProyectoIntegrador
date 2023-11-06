@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'Slims';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Slims'), url('https://fonts.cdnfonts.com/s/86600/Slims.woff') format('woff');
+}
+body {
+    background-color: black;
+
+}
 /*products styles*/
 .card-products-container {
     margin: 5vh auto;
@@ -9,12 +19,20 @@
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+
+.card-products h3{
+    color: #F1C744;
 }
 
 .card-products img{
     margin-top: 40px;
     width: 250px;
     height: 200px;
+    border-radius: 5em;
+    box-shadow: 3px 3px 15px #c6c3c39c;
 }
 
 .card-products button {
@@ -22,10 +40,15 @@
     outline: 0;
     padding: 10px;
     color: white;
-    background-color: #1bcb7f;
+    background-color: #FF914D;
+    
     text-align: center;
     cursor: pointer;
     width: 100%;
+    font-size: 18px;
+    border-radius: 1em;
+    font-family: sans-serif;
+    font-weight: bold;
     font-size: 15px;
 }
 
@@ -34,16 +57,24 @@
 }
 
 /*card button*/
-.cart-btn{
+.cart-btn {
     position: fixed;
-    top: 90vh;
-    right: 40px;
-    background-color: rgb(25, 25, 25);
-    padding: 10px;
+    top: 88vh;
+    right: 45px;
+    background-color: #92BC3D;
+    padding: 20px;    
     border-radius: 50%;
     height: 24px;
     width: 24px;
     transition: transform 0.2s ease-in-out;
+}
+.cart-btn img {
+    width: 3em;
+    height: 3em;
+    position: fixed;
+    top: 88vh;
+    right: 40px;
+    padding: 10px;
 }
 
 .cart-btn:hover{
@@ -79,7 +110,7 @@
 }
 .modal-container{
     display: none;
-    background-color: #ffffff;
+    background-color: #F2E394;
     box-shadow: 0px 3px 6x #00000029;
     padding: 40px;
     position: absolute;
@@ -91,6 +122,9 @@
     z-index: 1;
     max-height: 80vh;
     overflow-y: auto;
+    border-radius: 1em;
+    color: #F26D3D;
+    font-family: sans-serif;
 }
 
 .modal-contaner::-webkit-scrollbar {
@@ -121,9 +155,11 @@
 }
 
 .product-img{
-    height: 60px;
+    height: 70px;
     margin-right: 20px;
     width: 90px;
+    border-radius: 1em;
+    box-shadow: 2px 2px 15px #a29d7f;
 }
 
 .product-info{
@@ -133,6 +169,7 @@
 
 .product-info h4{
     margin-top: 35px;
+    color: black
 }
 
 .quantity{
@@ -141,10 +178,11 @@
     justify-content: center;
     margin-top: 10px;
     margin-right: 4em;
+    color: #545454;
 }
 
 .quantity-btn-decrese, .quantity-btn-increse{
-    color: #333333;
+    color: #545454;
     cursor: pointer;
     font-size: 16px;
     width: 28px;
@@ -152,7 +190,7 @@
 }
 
 .quantity-input{
-    color: #333333;
+    color: #545454;
     font-size: 16px;
     padding: 10 10px;
     text-align: center;
@@ -175,12 +213,14 @@
     font-size: 20px;
     font-weight: bold;
     margin-top: 20px;
+    color:#92BC3D;
 }
 
 .delete-product{
     margin-top: 20px;
     margin-left: 2em;
     cursor: pointer;
+    color: #6A903D;
 }
 
 .modal-footer{
@@ -194,8 +234,8 @@
     margin-bottom: 10px;
 }
 .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
+    background-color: #F26D3D;
+    border: none;
     color: #ffffff;
     font-size: 14px;
     font-weight: bold;
@@ -206,10 +246,19 @@
 }
 
 .btn-primary:hover {
-    background-color: #0069d9;
-    border-color: #0062cc;
+    background-color: #FF914D;
+    border: none;
 }
 
 #button-checkout {
     z-index: 10;
+}
+
+.titulo {
+    font-family: 'Slims', sans-serif;
+    font-size: 10em;
+    font-weight: normal;
+    color: #6A903D;
+    text-align: center;
+    text-shadow: 7px 7px 1px #F1C744;
 }
