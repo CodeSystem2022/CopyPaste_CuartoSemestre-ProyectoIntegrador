@@ -3,18 +3,15 @@ const modalOverlay = document.getElementById("modal-overlay");
 const cartBtn = document.getElementById("cart-btn");
 const cartCounter = document.getElementById("cart-counter");
 
-const cart = [];
+const cart = []; 
 
 const displayCart = async () => {
     modalContainer.innerHTML = "";
     modalContainer.style.display = "block";
     modalOverlay.style.display = "block";
     totalPrice = 0;
-    modalContainer.innerHTML = "";
-    modalContainer.style.display = "block";
-    modalOverlay.style.display = "block";
 
-    //modal Header
+    //Header del modal
     const modalHeader = document.createElement("div");
     const modalClose = document.createElement("div");
     modalClose.innerText = "❌";
@@ -24,17 +21,15 @@ const displayCart = async () => {
         modalContainer.style.display = "none";
         modalOverlay.style.display = "none";
     })
-
     const modalTitle = document.createElement("div");
-    modalTitle.innerText = "Carrito";    
+    modalTitle.innerText = "Carrito";
     modalTitle.className = "modal-title";
     modalHeader.append(modalTitle);
     modalContainer.append(modalHeader);
 
-    //modal Body
-    if(cart.length > 0){
+    //Body del modal
+    if (cart.length > 0) {
         await Promise.all(cart.map(async (product) => {
-        
             const modalBody = document.createElement("div");
             modalBody.className = "modal-body";
             const response = await fetch(`/productos/${product.id}`);
@@ -47,11 +42,11 @@ const displayCart = async () => {
                         <div class="product">
                             <img class="product-img" src="${producto.img}" />
                             <div class="product-info">
-                            <h4>${producto.name}</h4>
+                                <h4>${producto.name}</h4>
                             </div>
                             <div class="quantity">
                                 <span class="quantity-btn-decrese">-</span>
-                                <span class="quantity-input">${product.quantity}</span>>
+                                <span class="quantity-input">${product.quantity}</span>
                                 <span class="quantity-btn-increse">+</span>
                             </div>
                             <div class="price">$ ${producto.price * product.quantity} </div>
@@ -60,7 +55,6 @@ const displayCart = async () => {
                     `;
                     modalContainer.append(modalBody);
                     // Restar uno al producto
-
                     const decrese = modalBody.querySelector(".quantity-btn-decrese");
                     decrese.addEventListener("click", () => {
                         if(product.quantity !== 1){
@@ -87,34 +81,30 @@ const displayCart = async () => {
                     deleteProduct.addEventListener("click", ()=> {
                         deleteCartProduct(producto.id)
                     });
-                }));
-        
-    //modal footer
-    const total = cart.reduce((acc,el) => acc + el.price * el.quantity, 0);
-    totalPrice = total;
+        }));
+        //modal footer
+        const total = cart.reduce((acc,el) => acc + el.price * el.quantity, 0);
+        totalPrice = total;
+        const modalFooter = document.createElement("div");
+        modalFooter.className = "modal-footer";
+        modalFooter.innerHTML = `
+            <div class = "total-price">Total: $ ${total}</div>
+            <button class = "btn-primary" id="checkout-btn"> Pagar </button> 
+            <div id="button-checkout"></div>
+        `;
+        modalContainer.append(modalFooter);
 
-    const modalFooter = document.createElement("div");
-    modalFooter.className = "modal-footer";
-    modalFooter.innerHTML = `
-    <div class = "total-price">Total: $ ${total}</div>
-    <button class = "btn-primary" id="checkout-btn"> Pagar </button> 
-    <div id="button-checkout"></div>
-`;
-
-    modalContainer.append(modalFooter);
-
-    //Mercado Pago;
-        const mercadopago = new MercadoPago("APP_USR-5edee690-9d67-4f22-b564-0bffaa7bf97a", {
+        //Mercado Pago;
+        const mercadopago = new MercadoPago("TEST-5b815b1c-fe4e-4504-834f-0b129e8db65e", {
             locale: "es-AR",
-         }); 
+        });
 
-        const checkoutButton = modalFooter.querySelector("#checkout-btn"); //capturamos el boton para el evento click y ejecutar
+        const checkoutButton = modalFooter.querySelector("#checkout-btn");
         checkoutButton.addEventListener("click", function (){
-            checkoutButton.remove(); 
-
+            checkoutButton.remove();
             const orderData = {
                 quantity: 1,
-                description: "compra de ecommerce",
+                description: "compra de ecomerce",
                 price: total,
             };
             fetch("http://localhost:8080/create_preference", {
@@ -134,7 +124,8 @@ const displayCart = async () => {
                     alert("Unexpected error");
                 });
         });
-                function createCheckoutButton(preferenceId) {
+
+        function createCheckoutButton(preferenceId) {
             //Initialize the checkout
             const bricksBuilder = mercadopago.bricks();
             const renderComponent = async (bricksBuilder) => {
@@ -162,13 +153,11 @@ const displayCart = async () => {
         modalContainer.append(modalText);
     }
 };
-
 cartBtn.addEventListener("click", displayCart);
-
 const deleteCartProduct =(id) => {
     const foundId = cart.findIndex((element)=> element.id === id);
     cart.splice(foundId, 1);
-    displayCart()
+    displayCart();
     displayCartCounter();
 };
 
@@ -180,9 +169,7 @@ const displayCartCounter = ()=> {
     }else{
         cartCounter.style.display = "none";
     }
-
 };
-
 
 function updateTotalPrice() {
     const modalFooter = document.querySelector(".modal-footer");
