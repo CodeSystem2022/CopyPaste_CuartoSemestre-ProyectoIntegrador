@@ -34,7 +34,7 @@ const displayCart = async () => {
     //modal Body
     if(cart.length > 0){
         await Promise.all(cart.map(async (product) => {
-        cart.forEach((product) => {
+        
             const modalBody = document.createElement("div");
             modalBody.className = "modal-body";
             const response = await fetch(`/productos/${product.id}`);

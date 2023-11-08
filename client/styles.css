@@ -6,7 +6,7 @@
 }
 
 /* Home */
-.logo{
+.logo {
     width: 8em;
     height: 11em
 }
@@ -21,7 +21,7 @@
     cursor: default;
 }
 
-.title{
+.title {
     text-align: center;
     display: flex;
     flex-direction: row;
@@ -55,12 +55,12 @@ div .card {
     font-size: x-large;
 }
 
-.card-products h3{
+.card-products h3 {
     color: #F1C744;
     font-size: xx-large;
 }
 
-.card-products img{
+.card-products img {
     margin-top: 40px;
     width: 250px;
     height: 200px;
@@ -107,12 +107,12 @@ div .card {
     width: 3em;
     height: 3em;
     position: fixed;
-    top: 89vh;
-    right: 50px;    
+    top: 88vh;
+    right: 41px;    
     padding: 10px;
 }
 
-.cart-btn:hover{
+.cart-btn:hover {
     cursor: pointer;
     opacity: 0.9;
 }
@@ -145,7 +145,7 @@ div .card {
     z-index: 1;
 }
 
-.modal-container{
+.modal-container {
     display: none;
     background-color: #F2E394;
     box-shadow: 2px 2px 10px black;
@@ -182,20 +182,20 @@ div .card {
 }
 
 /*modal body*/
-.modal-body{
+.modal-body {
     margin-bottom: 20px;
     text-align: center;
     color: black;
 }
 
-.product{
+.product {
     display: flex;
     align-items: center;
     justify-content: space-around;
     margin-bottom: 20px;
 }
 
-.product-img{
+.product-img {
     height: 70px;
     margin-right: 20px;
     width: 90px;
@@ -203,17 +203,17 @@ div .card {
     box-shadow: 2px 2px 15px #a29d7f;
 }
 
-.product-info{
+.product-info {
     flex: 1;
     text-align: left;
 }
 
-.product-info h4{
+.product-info h4 {
     margin-top: 35px;
     color: black
 }
 
-.quantity{
+.quantity {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -222,7 +222,7 @@ div .card {
     color: #545454;
 }
 
-.quantity-btn-decrese, .quantity-btn-increse{
+.quantity-btn-decrese, .quantity-btn-increse {
     color: #545454;
     cursor: pointer;
     font-size: 16px;
@@ -230,7 +230,7 @@ div .card {
     font-weight: bold;
 }
 
-.quantity-input{
+.quantity-input {
     color: black;
     font-size: 16px;
     padding: 10 10px;
@@ -251,7 +251,7 @@ div .card {
 
 }
 
-.price{
+.price {
     font-size: 20px;
     font-weight: bold;
     margin-top: 20px;
@@ -259,24 +259,26 @@ div .card {
     cursor: default;
 }
 
-.delete-product{
+.delete-product {
     margin-top: 20px;
     margin-left: 2em;
     cursor: pointer;
     color: #6A903D;
 }
 
-.modal-footer{
+.modal-footer {
     text-align: center;
     margin-top: 5em;
 }
 
-.total-price{
+.total-price {
     font-size: 20px;
     font-weight: bold;
-    margin-top: 20px;
+    margin: 20px;
     color: #6A903D;
     cursor: default;
+}
+
 .btn-primary {
     background-color: #F26D3D;
     border: none;
@@ -298,13 +300,4 @@ div .card {
 
 #button-checkout {
     z-index: 10;
-}
-
-.titulo {
-    font-family: 'Slims', sans-serif;
-    font-size: 10em;
-    font-weight: normal;
-    color: #6A903D;
-    text-align: center;
-    text-shadow: 7px 7px 1px #F1C744;
 }
