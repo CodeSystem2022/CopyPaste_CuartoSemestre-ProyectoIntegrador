@@ -26,7 +26,8 @@
 
 <h2> 🗂 Proyecto del repositorio:</h2>
 <br>
-<h4>  Nuestro página web es in e-commerce especializado en la venta de productos orgánicos frescos y saludables. El enfoque principal es ser el nexo entre el consumidor y el productor dándole a este último la posibilidad y facilidad de hacerlo mediante una web y sin moverse de su domicilio. <br> </h4>
+<h4>  Nuestro página web es in e-commerce especializado en la venta de productos orgánicos frescos y saludables. El enfoque principal es ser el nexo entre el consumidor y el productor dándole a este último la posibilidad y facilidad de hacerlo mediante una web y sin moverse de su domicilio. <br> 
+      En el e-commerce se podrá comprar con envío a domicilio y diferentes métodos de pago. </h4>
 
 <h2><strong><u> 👤 Integrantes</u></strong></h2>
 
@@ -45,7 +46,7 @@
 <h3><strong><u> ✅ Funcionalidades del e-commerce: </u></strong></h3>
 <br>
 	✔️ Compra de la seleccion de frutas y verduras. <br>
-	✔️ Elección de pago en efectivo o con Mercado Pago. <br>
+	✔️ Elección de pago con Mercado Pago : Efectivo, tarjeta, pago por medio de la app con QR . <br>
 	✔️ Elección de envio a domicilio o retiro por tienda. <br>
 <br>
 <br>
