@@ -1,4 +1,11 @@
-# Mandale Fruta
+# CopyPaste - Trabajo Integrador del Cuarto Semestre Año 2023
+
+![Logo Copy:Paste](https://user-images.githubusercontent.com/103675851/232830051-f665dac5-7813-4c63-8612-a451b562bdf7.jpg)
+
+<div id="header" align="end">
+		<h3 align="end">Repositorio del trabajo integrador en JavaScript del grupo CopyPaste</h3>
+		<h4 align="end">En este repositorio se encuentra el trabajo integrador del cuarto semestre</h4>
+</div>
 
 <div >
   <h2> 📚 Tecnologías del repositorio: </h2>
@@ -19,8 +26,19 @@
 
 <h2> 🗂 Proyecto del repositorio:</h2>
 <br>
-<h4>  Nuestro página web es un e-commerce especializado en la venta de productos orgánicos frescos y saludables. El enfoque principal es ser el nexo entre el consumidor y el productor dándole a este último la posibilidad y facilidad de hacerlo mediante una web y sin moverse de su domicilio. <br> 
-      En el e-commerce se podrá comprar con envío a domicilio y diferentes métodos de pago.</h4>
+<h4>  Nuestro página web es in e-commerce especializado en la venta de productos orgánicos frescos y saludables. El enfoque principal es ser el nexo entre el consumidor y el productor dándole a este último la posibilidad y facilidad de hacerlo mediante una web y sin moverse de su domicilio. <br> </h4>
+
+<h2><strong><u> 👤 Integrantes</u></strong></h2>
+
+<div align="center">	
+<h3>	  
+  Britez Neira Leila
+  <br>
+  Solán Leonardo
+  <br>
+  Viola Jésica
+ </div>
+ 
    <br>
 
    <hr>
