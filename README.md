@@ -7,6 +7,10 @@
 		<h4 align="end">En este repositorio se encuentra el trabajo integrador del cuarto semestre</h4>
 </div>
 
+<h2> 🎬 Link del video de presentación del e-commerce:</h2>
+<br>
+<h4>  https://drive.google.com/file/d/1-hS9-Ew9kMmLVOov5MEeW92NRUKQcS9P/view  </h4>
+
 <div >
   <h2> 📚 Tecnologías del repositorio: </h2>
 	<br>
