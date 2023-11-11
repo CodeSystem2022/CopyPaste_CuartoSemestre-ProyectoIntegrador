@@ -10,7 +10,7 @@
 <h2> 🎬 Link del video de presentación del e-commerce:</h2>
 <br>
 <h4>  https://drive.google.com/file/d/1-hS9-Ew9kMmLVOov5MEeW92NRUKQcS9P/view  </h4>
-
+<br>
 <div >
   <h2> 📚 Tecnologías del repositorio: </h2>
 	<br>
@@ -32,7 +32,7 @@
 <br>
 <h4>  Nuestro página web es in e-commerce especializado en la venta de productos orgánicos frescos y saludables. El enfoque principal es ser el nexo entre el consumidor y el productor dándole a este último la posibilidad y facilidad de hacerlo mediante una web y sin moverse de su domicilio. <br> 
       En el e-commerce se podrá comprar con envío a domicilio y diferentes métodos de pago. </h4>
-
+<br>
 <h2><strong><u> 👤 Integrantes</u></strong></h2>
 
 <div align="center">	
@@ -42,19 +42,17 @@
   Solán Leonardo
   <br>
   Viola Jésica
- </div>
- 
+ </div> 
    <br>
 
-   <hr>
-<h3><strong><u> ✅ Funcionalidades del e-commerce: </u></strong></h3>
+<h2><strong><u> ✅ Funcionalidades del e-commerce: </u></strong></h2>
 <br>
 	✔️ Compra de la seleccion de frutas y verduras. <br>
 	✔️ Elección de pago con Mercado Pago : Efectivo, tarjeta, pago por medio de la app con QR . <br>
 	✔️ Elección de envio a domicilio o retiro por tienda. <br>
 <br>
+<h2><strong><u> ▶️ Puesta en marcha del proyecto: </u></strong></h2>
 <br>
-<h3><strong><u> ▶️ Puesta en marcha del proyecto: </u></strong></h3>
 1. Luego de clonar el repositorio : `git clone https://github.com/CodeSystem2022/CopyPaste_CuartoSemestre-ProyectoIntegrador.git `.<br>
 2. Vamos a la carpeta del proyecto : `cd CopyPaste_CuartoSemestre-ProyectoIntegrador `.<br> 
 3. Vamos a la carpeta del server que contiene la carpeta node_modules: `cd server `.<br> 
@@ -73,3 +71,4 @@
    <br>
 7. Rellenamos nuestra base de datos local `"verduleria" ` con las tabla: `"productos" ` columnas: `"name", "quantity", "img", "price" `.<br>
 8. Lanzamos nuestro servidor: `npm start`.<br>
+<br>
